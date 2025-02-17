@@ -1,11 +1,12 @@
-"use client";
-
-import { useState } from "react";
 import ExpensesTable from "@/components/expensesTable/expensesTable";
 import SearchExpensesFields from "@/components/searchExpensesField";
-export default function SearchResults({ classes, initialFoundExpenses }) {
-  const [foundExpenses, setFoundExpenses] = useState(initialFoundExpenses);
-
+import { goToFilteredSearch } from "@/lib/actions";
+export default function SearchResults({
+  classes,
+  foundExpenses,
+  startDate,
+  endDate,
+}) {
   const displayExpenses =
     foundExpenses.length == 0 ? (
       <h1>No Expenses Found</h1>
@@ -14,10 +15,11 @@ export default function SearchResults({ classes, initialFoundExpenses }) {
     );
   return (
     <>
-      <form>
+      <form action={goToFilteredSearch}>
         <SearchExpensesFields
           classes={classes}
-          setFoundExpenses={setFoundExpenses}
+          startDate={startDate}
+          endDate={endDate}
         />
       </form>
       {displayExpenses}
