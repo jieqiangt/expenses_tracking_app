@@ -1,3 +1,3 @@
-export default function ModalDefaultPage() {
+export default function MainModalDefault() {
   return null;
 }
