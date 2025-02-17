@@ -21,7 +21,7 @@ export default function MainHeader() {
           <NavLink className={classes["header-nav-link"]} href="/analytics">
             Analytics
           </NavLink>
-          <NavLink className={classes["header-nav-link"]} href="/settings">
+          <NavLink className={classes["header-nav-link"]} href="/setConfig">
             Settings
           </NavLink>
         </ul>
