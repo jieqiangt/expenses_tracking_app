@@ -10,3 +10,4 @@ FROM
 WHERE
     exp_date >= $1
     AND exp_date <= $2
+ORDER BY exp_date DESC

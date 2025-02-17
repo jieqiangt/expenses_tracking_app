@@ -1,3 +1,9 @@
+import Link from "next/link";
+
 export default function HomePage() {
-  return <main>This is my page</main>;
+  return (
+    <main>
+      <Link href="/add">Add Expense</Link>
+    </main>
+  );
 }

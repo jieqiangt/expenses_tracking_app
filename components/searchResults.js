@@ -1,7 +1,9 @@
 import ExpensesTable from "@/components/expensesTable/expensesTable";
 import SearchExpensesFields from "@/components/searchExpensesField";
 import { goToFilteredSearch } from "@/lib/actions";
-export default function SearchResults({
+import { redirect } from "next/navigation";
+
+export default async function SearchResults({
   classes,
   foundExpenses,
   startDate,
@@ -13,6 +15,10 @@ export default function SearchResults({
     ) : (
       <ExpensesTable foundExpenses={foundExpenses} />
     );
+  const handleReset = async () => {
+    "use server";
+    redirect("/expenses");
+  };
   return (
     <>
       <form action={goToFilteredSearch}>
@@ -21,6 +27,9 @@ export default function SearchResults({
           startDate={startDate}
           endDate={endDate}
         />
+      </form>
+      <form action={handleReset}>
+        <button>Reset</button>
       </form>
       {displayExpenses}
     </>

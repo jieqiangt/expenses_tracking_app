@@ -6,6 +6,7 @@ import {
   subtractMonths,
 } from "@/lib/utils";
 import SearchResults from "@/components/searchResults";
+import Link from "next/link";
 
 export default async function SearchPage({ params }) {
   const { filter } = await params;
@@ -28,6 +29,7 @@ export default async function SearchPage({ params }) {
 
   return (
     <main className={classes["search"]}>
+      <Link href="/add">Add Expense</Link>
       <SearchResults
         classes={classes}
         foundExpenses={foundExpenses}
