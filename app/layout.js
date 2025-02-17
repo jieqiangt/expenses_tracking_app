@@ -9,8 +9,8 @@ export default function RootLayout({ modal, children }) {
   return (
     <html lang="en">
       <body>
-        {modal}
         <MainHeader />
+        {modal}
         {children}
       </body>
     </html>
