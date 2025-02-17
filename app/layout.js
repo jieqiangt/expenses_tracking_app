@@ -5,12 +5,11 @@ export const metadata = {
   title: "My Expenses",
   description: "Just an expense tracking application",
 };
-
-MainHeader;
-export default function RootLayout({ children }) {
+export default function RootLayout({ modal, children }) {
   return (
     <html lang="en">
       <body>
+        {modal}
         <MainHeader />
         {children}
       </body>

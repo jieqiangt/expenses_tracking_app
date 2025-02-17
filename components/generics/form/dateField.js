@@ -1,10 +1,19 @@
+import { getCurrentDateTime } from "@/lib/utils";
+
 export default function DateField({
   name,
   label,
-  defaultValue,
+  startingValue,
   fieldClassName,
-  ref
+  ref,
 }) {
+  let defaultValue = startingValue;
+
+  if (!startingValue) {
+    const { todayDateStr } = getCurrentDateTime();
+    defaultValue = todayDateStr;
+  }
+
   return (
     <div className={fieldClassName}>
       <label htmlFor={name}>{label}</label>
