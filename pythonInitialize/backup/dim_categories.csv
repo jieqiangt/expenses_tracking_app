@@ -1,0 +1,9 @@
+id,discretionary,category,user_id,created_on,updated_on
+1,False,healthcare,1,2022-03-20,2022-06-28
+2,False,necessities,1,2022-03-20,2022-06-28
+3,False,allowance,1,2022-03-20,2022-06-28
+4,False,transport,1,2022-03-20,2022-06-28
+5,False,education,1,2022-03-20,2022-06-28
+6,True,entertainment,1,2022-03-20,2022-06-28
+7,False,food,1,2022-03-20,2022-06-28
+8,True,travel,1,2022-03-20,2022-06-28

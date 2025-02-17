@@ -1,0 +1,33 @@
+@import "@/styles/variables";
+
+$logo-height: 3rem;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-logo {
+    height: $logo-height;
+    width: auto;
+    position: relative;
+  }
+
+  &-nav {
+    position: absolute;
+    right: 4rem;
+
+    &-list {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &-link {
+      font-size: 1.2rem;
+      &:hover {
+        color: $color-primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}

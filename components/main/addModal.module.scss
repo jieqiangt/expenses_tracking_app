@@ -1,0 +1,29 @@
+@import "@/styles/mixins";
+
+.add {
+  width: 100vw;
+
+  &-form {
+    width: 100%;
+
+    &-fields {
+      display: grid;
+      grid-template-columns: max-content max-content max-content;
+      justify-items: start;
+      padding: 2rem 6rem;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    &-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-btn {
+      @include buttonDefaults;
+      grid-column: 3/-1;
+      grid-row: 1 / 3;
+    }
+  }
+}

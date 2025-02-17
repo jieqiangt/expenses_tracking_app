@@ -1,3 +1,4 @@
+import MainHeader from "@/components/main/mainHeader";
 import "./globals.scss";
 
 export const metadata = {
@@ -5,10 +6,14 @@ export const metadata = {
   description: "Just an expense tracking application",
 };
 
+MainHeader;
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MainHeader />
+        {children}
+      </body>
     </html>
   );
 }
