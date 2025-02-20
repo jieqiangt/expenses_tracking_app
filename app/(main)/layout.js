@@ -1,5 +1,5 @@
 import MainHeader from "@/components/main/mainHeader";
-import "./globals.scss";
+import "../globals.scss";
 
 export const metadata = {
   title: "My Expenses",

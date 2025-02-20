@@ -1,4 +1,4 @@
-import AddExpensesFields from "@/components/main/addExpensesFields";
+import AddExpensesFields from "@/components/addExpenses/addExpensesFields";
 import classes from "./addExpensesModal.module.scss";
 import { createExpense, getCategoriesOptions } from "@/lib/actions";
 import Modal from "../generics/modal";

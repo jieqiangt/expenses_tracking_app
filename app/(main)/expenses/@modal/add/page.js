@@ -1,4 +1,4 @@
-import AddExpensesModal from "@/components/main/addExpensesModal";
+import AddExpensesModal from "@/components/addExpenses/addExpensesModal";
 
 export default function AddModalPage() {
   return <AddExpensesModal />;

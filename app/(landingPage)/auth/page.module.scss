@@ -1,0 +1,41 @@
+@import "@/styles/mixins";
+
+body {
+  height: 100vh;
+}
+
+.auth {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+
+  &-imgSection {
+    width: 50%;
+  }
+
+  &-img {
+    object-fit: cover;
+  }
+
+  &-formSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+
+  &-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &-field {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &-submit {
+    @include buttonDefaults;
+  }
+}
