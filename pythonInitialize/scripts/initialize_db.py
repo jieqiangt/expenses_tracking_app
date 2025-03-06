@@ -1,6 +1,7 @@
-from utils.db_utils import create_sql_engine, execute_query, read_sql_file
+from utils.db_utils import execute_query, read_sql_file
 import pandas as pd
 import os
+from datetime import date
 
 DATABASE_TABLES = ['trs_users','dim_dates','dim_categories','trs_recur_expenses','trs_expenses']
 
@@ -22,7 +23,7 @@ def create_tables(conn):
 def initialize_db_settings(conn):
     
     query = read_sql_file('./sql/general/citext.sql')
-    execute_query(conn, query, commit=True);
+    execute_query(conn, query, commit=True)
     
             
 def seed_tables(conn):
@@ -47,5 +48,21 @@ def backup_tables(conn):
         data = pd.read_sql(query, conn)
         file_path = os.path.join(root_folder,f'{table}.csv')
         data.to_csv(file_path,index=False)
-    
         
+def insert_recurring_expenses(conn):
+    
+    today = date.today()
+    exp_month = today.month
+    exp_year = today.year
+    params={"exp_month": exp_month, "exp_year": exp_year}
+    check_query = read_sql_file(f'./sql/general/check_recur_expenses_for_month_year.sql')
+    result = execute_query(conn, check_query, params=params)
+    
+    if result.rowcount != 0:
+        print('Recurring expenses already exist for this month and year')
+        return None
+    
+    params['user_id'] = 1
+    insert_query = read_sql_file(f'./sql/general/insert_recur_expenses.sql')
+    execute_query(conn, insert_query, params=params, commit=True)
+    
